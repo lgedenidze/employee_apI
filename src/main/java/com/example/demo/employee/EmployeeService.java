@@ -23,6 +23,10 @@ public class EmployeeService {
         return employeeRepository.findAll();
 
     }
+    public Optional<Employee> getEmployeeByMail(String mail){
+
+        return employeeRepository.findEmployeeByEmail(mail);
+    }
 
     public void addNewEmployee(Employee employee) throws IllegalAccessException {
         if(employeeRepository.findEmployeeByEmail(employee.getEmail()).isPresent()){
